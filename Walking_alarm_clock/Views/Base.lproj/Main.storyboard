@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Walking_alarm_clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uhU-r8-aGU">
+                                <rect key="frame" x="32" y="106" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no alarm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-xG-zgU">
+                                <rect key="frame" x="32" y="186" width="223" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhe-aV-h2n">
+                                <rect key="frame" x="310" y="106" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.25490196079999999" green="0.71764705880000002" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="JfB-yZ-tJ8"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ksb-dk-UJR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nhe-aV-h2n" firstAttribute="leading" secondItem="uhU-r8-aGU" secondAttribute="trailing" constant="38" id="2WS-pL-r5m"/>
+                            <constraint firstItem="uhU-r8-aGU" firstAttribute="top" secondItem="Nhe-aV-h2n" secondAttribute="top" id="8T0-Pg-m0n"/>
+                            <constraint firstItem="gxn-xG-zgU" firstAttribute="top" secondItem="uhU-r8-aGU" secondAttribute="bottom" constant="50" id="ELq-A1-Q4P"/>
+                            <constraint firstItem="uhU-r8-aGU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="VvI-74-nl4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gxn-xG-zgU" secondAttribute="trailing" constant="159" id="W8N-fU-AHH"/>
+                            <constraint firstItem="uhU-r8-aGU" firstAttribute="leading" secondItem="gxn-xG-zgU" secondAttribute="leading" id="eYV-Tl-86h"/>
+                            <constraint firstItem="uhU-r8-aGU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="kwb-zH-icQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nhe-aV-h2n" secondAttribute="trailing" constant="45" id="v8z-wa-m2h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="setTimeButton" destination="Nhe-aV-h2n" id="g5P-10-miV"/>
+                        <outlet property="setTimeLabel" destination="gxn-xG-zgU" id="q2u-Fi-KXB"/>
+                        <outlet property="timeTextField" destination="uhU-r8-aGU" id="uZQ-ht-qr8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
