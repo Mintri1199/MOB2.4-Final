@@ -8,10 +8,20 @@
 
 import Foundation
 
+enum Day {
+    case Monday
+    case Tuesday
+    case Wednesday
+    case Thursday
+    case Friday
+    case Saturday
+    case Sunday
+}
+
 struct AlarmModel {
     var setTime: Date
-    var repeated: Bool
-    var alarmIdentifier: String // Must be unique 
+    var enable: Bool
+    var repeatable: Bool
+    var alarmIdentifier: String
     var coreDataId: String
-    
 }

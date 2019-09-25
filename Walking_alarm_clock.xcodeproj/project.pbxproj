@@ -17,6 +17,7 @@
 		4444705A232712830068AC42 /* Walking_alarm_clockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44447059232712830068AC42 /* Walking_alarm_clockUITests.swift */; };
 		44C0B568233847320015110B /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B567233847320015110B /* AlarmModel.swift */; };
 		44C0B56A23384C520015110B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B56923384C520015110B /* Notification.swift */; };
+		44C0B56D23386C6B0015110B /* PedometerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B56C23386C6B0015110B /* PedometerVC.swift */; };
 		6F3335114290657252E155C5 /* Pods_Walking_alarm_clockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A141EFE2E8BB30E17E6168 /* Pods_Walking_alarm_clockTests.framework */; };
 		FB3FFA11175EF58718E102FF /* Pods_Walking_alarm_clock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B466ECBC57152E08CD7E94B /* Pods_Walking_alarm_clock.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		4444705B232712830068AC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44C0B567233847320015110B /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		44C0B56923384C520015110B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		44C0B56C23386C6B0015110B /* PedometerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerVC.swift; sourceTree = "<group>"; };
 		7B466ECBC57152E08CD7E94B /* Pods_Walking_alarm_clock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Walking_alarm_clock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF4FF79CD679FC9FFEF3DE4 /* Pods-Walking_alarm_clockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clockTests.debug.xcconfig"; path = "Target Support Files/Pods-Walking_alarm_clockTests/Pods-Walking_alarm_clockTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0A141EFE2E8BB30E17E6168 /* Pods_Walking_alarm_clockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Walking_alarm_clockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				4444703B2327127F0068AC42 /* ViewController.swift */,
+				44C0B56C23386C6B0015110B /* PedometerVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44C0B56A23384C520015110B /* Notification.swift in Sources */,
+				44C0B56D23386C6B0015110B /* PedometerVC.swift in Sources */,
 				4444703C2327127F0068AC42 /* ViewController.swift in Sources */,
 				4444703A2327127F0068AC42 /* AppDelegate.swift in Sources */,
 				44C0B568233847320015110B /* AlarmModel.swift in Sources */,
