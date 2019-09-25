@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Walking_alarm_clock_Walking_alarm_clockUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Walking_alarm_clock_Walking_alarm_clockUITests
+@end
