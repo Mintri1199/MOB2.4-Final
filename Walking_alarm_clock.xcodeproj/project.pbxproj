@@ -14,6 +14,8 @@
 		44447044232712820068AC42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44447042232712820068AC42 /* LaunchScreen.storyboard */; };
 		4444704F232712830068AC42 /* Walking_alarm_clockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444704E232712830068AC42 /* Walking_alarm_clockTests.swift */; };
 		4444705A232712830068AC42 /* Walking_alarm_clockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44447059232712830068AC42 /* Walking_alarm_clockUITests.swift */; };
+		9DB671D423397E05008C9F48 /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB671D323397E05008C9F48 /* AlarmViewModel.swift */; };
+		9DB671D623397E3C008C9F48 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB671D523397E3C008C9F48 /* Alarm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		44447055232712830068AC42 /* Walking_alarm_clockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Walking_alarm_clockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44447059232712830068AC42 /* Walking_alarm_clockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking_alarm_clockUITests.swift; sourceTree = "<group>"; };
 		4444705B232712830068AC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB671D323397E05008C9F48 /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
+		9DB671D523397E3C008C9F48 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				444470392327127F0068AC42 /* AppDelegate.swift */,
-				4444703B2327127F0068AC42 /* ViewController.swift */,
-				4444703D2327127F0068AC42 /* Main.storyboard */,
+				9DB671D023397B05008C9F48 /* Model */,
+				9DB671D123397B14008C9F48 /* View */,
+				9DB671D223397B26008C9F48 /* ViewModel */,
 				44447040232712820068AC42 /* Assets.xcassets */,
 				44447042232712820068AC42 /* LaunchScreen.storyboard */,
 				44447045232712820068AC42 /* Info.plist */,
@@ -123,6 +128,31 @@
 				4444705B232712830068AC42 /* Info.plist */,
 			);
 			path = Walking_alarm_clockUITests;
+			sourceTree = "<group>";
+		};
+		9DB671D023397B05008C9F48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DB671D523397E3C008C9F48 /* Alarm.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9DB671D123397B14008C9F48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4444703D2327127F0068AC42 /* Main.storyboard */,
+				4444703B2327127F0068AC42 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9DB671D223397B26008C9F48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9DB671D323397E05008C9F48 /* AlarmViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4444703C2327127F0068AC42 /* ViewController.swift in Sources */,
+				9DB671D423397E05008C9F48 /* AlarmViewModel.swift in Sources */,
 				4444703A2327127F0068AC42 /* AppDelegate.swift in Sources */,
+				9DB671D623397E3C008C9F48 /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
