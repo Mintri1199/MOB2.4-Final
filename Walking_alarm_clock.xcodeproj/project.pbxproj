@@ -41,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		0968B7E1D61D82DD25FE25F0 /* Pods-Walking_alarm_clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clock.release.xcconfig"; path = "Target Support Files/Pods-Walking_alarm_clock/Pods-Walking_alarm_clock.release.xcconfig"; sourceTree = "<group>"; };
+		16C4EF9ECAC8FE39F70512D3 /* Pods-Walking_alarm_clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walking_alarm_clock/Pods-Walking_alarm_clock.debug.xcconfig"; sourceTree = "<group>"; };
 		361BF6038340F1412A81EB37 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig"; path = "Target Support Files/Pods-Walking_alarm_clock-Walking_alarm_clockUITests/Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4227CD3A1B5DEE2C58946953 /* Pods-Walking_alarm_clockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clockTests.release.xcconfig"; path = "Target Support Files/Pods-Walking_alarm_clockTests/Pods-Walking_alarm_clockTests.release.xcconfig"; sourceTree = "<group>"; };
 		444470362327127F0068AC42 /* Walking_alarm_clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walking_alarm_clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,8 +61,13 @@
 		44C0B56923384C520015110B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		44C0B56C23386C6B0015110B /* PedometerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerVC.swift; sourceTree = "<group>"; };
 		7B466ECBC57152E08CD7E94B /* Pods_Walking_alarm_clock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Walking_alarm_clock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98E181A5FCC11F651217CAB3 /* Pods-Walking_alarm_clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walking_alarm_clock/Pods-Walking_alarm_clock.release.xcconfig"; sourceTree = "<group>"; };
+		A2C6967BA4507EF1AA636B86 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walking_alarm_clock-Walking_alarm_clockUITests/Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AEF4FF79CD679FC9FFEF3DE4 /* Pods-Walking_alarm_clockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clockTests.debug.xcconfig"; path = "Target Support Files/Pods-Walking_alarm_clockTests/Pods-Walking_alarm_clockTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0A9EBDE518AB4F2B7870646 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walking_alarm_clock-Walking_alarm_clockUITests/Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0A141EFE2E8BB30E17E6168 /* Pods_Walking_alarm_clockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Walking_alarm_clockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A011B11D8C1BBC7848BE2B /* Pods-Walking_alarm_clockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Walking_alarm_clockTests/Pods-Walking_alarm_clockTests.release.xcconfig"; sourceTree = "<group>"; };
+		C310EBBDC44F8907A3B08169 /* Pods-Walking_alarm_clockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Walking_alarm_clockTests/Pods-Walking_alarm_clockTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D73494600FDBA69913CAD360 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig"; path = "Target Support Files/Pods-Walking_alarm_clock-Walking_alarm_clockUITests/Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E914052F3C16E2A703C42CF5 /* Pods-Walking_alarm_clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clock.debug.xcconfig"; path = "Target Support Files/Pods-Walking_alarm_clock/Pods-Walking_alarm_clock.debug.xcconfig"; sourceTree = "<group>"; };
 		EFB282AFE253C0DF9C1B2BBF /* Pods_Walking_alarm_clock_Walking_alarm_clockUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Walking_alarm_clock_Walking_alarm_clockUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +110,12 @@
 				D73494600FDBA69913CAD360 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig */,
 				AEF4FF79CD679FC9FFEF3DE4 /* Pods-Walking_alarm_clockTests.debug.xcconfig */,
 				4227CD3A1B5DEE2C58946953 /* Pods-Walking_alarm_clockTests.release.xcconfig */,
+				16C4EF9ECAC8FE39F70512D3 /* Pods-Walking_alarm_clock.debug.xcconfig */,
+				98E181A5FCC11F651217CAB3 /* Pods-Walking_alarm_clock.release.xcconfig */,
+				B0A9EBDE518AB4F2B7870646 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig */,
+				A2C6967BA4507EF1AA636B86 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig */,
+				C310EBBDC44F8907A3B08169 /* Pods-Walking_alarm_clockTests.debug.xcconfig */,
+				C2A011B11D8C1BBC7848BE2B /* Pods-Walking_alarm_clockTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -342,15 +354,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Walking_alarm_clock-checkManifestLockResult.txt",
 			);
@@ -364,11 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -381,15 +385,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Walking_alarm_clock-Walking_alarm_clockUITests-checkManifestLockResult.txt",
 			);
@@ -403,15 +403,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Walking_alarm_clockTests-checkManifestLockResult.txt",
 			);
@@ -430,7 +426,6 @@
 				44C0B56A23384C520015110B /* Notification.swift in Sources */,
 				44C0B56D23386C6B0015110B /* PedometerVC.swift in Sources */,
 				4444703C2327127F0068AC42 /* ViewController.swift in Sources */,
-				9DB671D423397E05008C9F48 /* AlarmViewModel.swift in Sources */,
 				4444703A2327127F0068AC42 /* AppDelegate.swift in Sources */,
 				44C0B568233847320015110B /* AlarmModel.swift in Sources */,
 			);
@@ -605,7 +600,7 @@
 		};
 		4444705F232712830068AC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E914052F3C16E2A703C42CF5 /* Pods-Walking_alarm_clock.debug.xcconfig */;
+			baseConfigurationReference = 16C4EF9ECAC8FE39F70512D3 /* Pods-Walking_alarm_clock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -624,7 +619,7 @@
 		};
 		44447060232712830068AC42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0968B7E1D61D82DD25FE25F0 /* Pods-Walking_alarm_clock.release.xcconfig */;
+			baseConfigurationReference = 98E181A5FCC11F651217CAB3 /* Pods-Walking_alarm_clock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -643,7 +638,7 @@
 		};
 		44447062232712830068AC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEF4FF79CD679FC9FFEF3DE4 /* Pods-Walking_alarm_clockTests.debug.xcconfig */;
+			baseConfigurationReference = C310EBBDC44F8907A3B08169 /* Pods-Walking_alarm_clockTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -665,7 +660,7 @@
 		};
 		44447063232712830068AC42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4227CD3A1B5DEE2C58946953 /* Pods-Walking_alarm_clockTests.release.xcconfig */;
+			baseConfigurationReference = C2A011B11D8C1BBC7848BE2B /* Pods-Walking_alarm_clockTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -687,7 +682,7 @@
 		};
 		44447065232712830068AC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 361BF6038340F1412A81EB37 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig */;
+			baseConfigurationReference = B0A9EBDE518AB4F2B7870646 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -708,7 +703,7 @@
 		};
 		44447066232712830068AC42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D73494600FDBA69913CAD360 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig */;
+			baseConfigurationReference = A2C6967BA4507EF1AA636B86 /* Pods-Walking_alarm_clock-Walking_alarm_clockUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
