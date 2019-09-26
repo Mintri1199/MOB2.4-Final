@@ -10,56 +10,22 @@ import UIKit
 import UserNotifications
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet private weak var setTimeButton: UIButton!
     @IBOutlet private weak var setTimeLabel: UILabel!
     @IBOutlet private weak var timeTextField: UITextField!
     
     private var timePicker: UIDatePicker?
     
-    private var alarmTime: Date? {
-        didSet {
-            setupTrigger()
-        }
-    }
-    let center = UNUserNotificationCenter.current()
-    
     override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view.
-        setupDatePicker()
-        registerNotification()
-    }
-    
-    private func setupTrigger() {
-        guard let alarmTime = alarmTime else {
-            return
-        }
-        let triggerCalendar = Calendar.current.dateComponents([.hour, .minute], from: alarmTime)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerCalendar, repeats: false)
-     
-        let content = UNMutableNotificationContent()
-        content.title = "Wake up"
-        content.sound = UNNotificationSound.defaultCritical
-        let identifier = "AlarmId"
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        super.viewDidLoad()
         
-        center.add(request) { (error) in
-            if error != nil {
-                print("Uh oh")
-            }
+        AlarmNotification.shared.getAuthorization { (granted) in
+            print(granted)
         }
+        
+        setupDatePicker()
     }
-    
-    private func registerNotification() {
-        let options: UNAuthorizationOptions = [.alert, .sound]
-        center.requestAuthorization(options: options) { (granted, error) in
-            if !granted {
-                print("Something is wrong")
-            }
-        }
-    }
-    
     private func setupDatePicker() {
         timePicker = UIDatePicker()
         timePicker?.datePickerMode = .time
@@ -81,11 +47,73 @@ class ViewController: UIViewController {
         view.endEditing(true)
         guard let date = timePicker?.date else {
             return }
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
         setTimeLabel.text = "Alarm set for \(dateFormatter.string(from: date))"
-        alarmTime = date
+        let resquest = setupRequest(date: date)
+        AlarmNotification.shared.center.add(resquest) { (error) in
+            if error != nil {
+                print(error)
+            }
+        }
+    }
+    
+    private func setup(date: Date) {
+        let triggerCalendar = Calendar.current.dateComponents([.hour, .minute], from: date)
+        print(triggerCalendar)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerCalendar, repeats: false)
+        let content = UNMutableNotificationContent()
+        content.title = "Wake up"
+        content.sound = UNNotificationSound.defaultCritical
+        
+        let request = setupRequest(date: date)
+        
+        AlarmNotification.shared.center.add(request) { (error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
+        }
+    }
+    
+    private func setupRequest(date: Date) -> UNNotificationRequest {
+        let trigger = AlarmNotification.shared.createTrigger(date: date)
+        let content = AlarmNotification.shared.createContent(title: "Wake up")
+        let identifier = "AlarmId"
+        return UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
     }
 }
+
+//
+//    private func registerNotification() {
+//        let options: UNAuthorizationOptions = [.alert, .sound]
+//        center.requestAuthorization(options: options) { (granted, error) in
+//            if !granted {
+//                print("Something is wrong")
+//            }
+//        }
+//    }
+//
+//    private func setupDatePicker() {
+//        timePicker = UIDatePicker()
+//        timePicker?.datePickerMode = .time
+//        timePicker?.addTarget(self, action: #selector(timeChange), for: .valueChanged)
+//        timeTextField.inputView = timePicker
+//    }
+//
+
+//
+
+//}
+//
+//extension ViewController: UNUserNotificationCenterDelegate {
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        print("Notification did sent")
+//    }
+//
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        print("Notification did sent")
+//    }
+//}
