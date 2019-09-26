@@ -24,4 +24,5 @@ struct AlarmModel {
     var repeatable: Bool
     var alarmIdentifier: String
     var coreDataId: String
+    var setSteps: Int
 }

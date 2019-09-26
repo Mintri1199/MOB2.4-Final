@@ -20,6 +20,15 @@ class PedometerVC: UIViewController {
         return label
     }()
     
+    private let stepsCount: UILabel = {
+        var label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = .black
+        label.textColor = .white
+        return label
+    }()
+    
     private let activityManager = CMMotionActivityManager()
     private let pedometer = CMPedometer()
     
@@ -27,38 +36,21 @@ class PedometerVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
         view.addSubview(statusLabel)
-        
+        view.addSubview(stepsCount)
         NSLayoutConstraint.activate([
             statusLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             statusLabel.heightAnchor.constraint(equalToConstant: 100),
-            statusLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5)
+            statusLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            
+            stepsCount.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stepsCount.heightAnchor.constraint(equalToConstant: 100),
+            stepsCount.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            stepsCount.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
-        startTrackingActivityType()
+        startTracking()
     }
-    
-    
-    
-    
-//    private func startTrackingActivityType() {
-//      activityManager.startActivityUpdates(to: OperationQueue.main) {
-//          [weak self] (activity: CMMotionActivity?) in
-//
-//          guard let activity = activity else { return }
-//          DispatchQueue.main.async {
-//              if activity.walking {
-//                  self?.activityTypeLabel.text = "Walking"
-//              } else if activity.stationary {
-//                  self?.activityTypeLabel.text = "Stationary"
-//              } else if activity.running {
-//                  self?.activityTypeLabel.text = "Running"
-//              } else if activity.automotive {
-//                  self?.activityTypeLabel.text = "Automotive"
-//              }
-//          }
-//      }
-//    }
     
     private func startTrackingActivityType() {
         activityManager.startActivityUpdates(to: OperationQueue.main) { [weak self] (activity: CMMotionActivity?) in
@@ -75,6 +67,26 @@ class PedometerVC: UIViewController {
             } else if activity.automotive {
                 self?.statusLabel.text = "Automotive"
             }
+        }
+    }
+    
+    private func startCountingSteps() {
+        pedometer.startUpdates(from: Date()) { [weak self] pedometerData, error in
+            guard let pedometerData = pedometerData, error == nil else { return }
+            
+            DispatchQueue.main.async {
+                self?.stepsCount.text = pedometerData.numberOfSteps.stringValue
+            }
+        }
+    }
+    
+    private func startTracking() {
+        if CMMotionActivityManager.isActivityAvailable() {
+            startTrackingActivityType()
+        }
+        
+        if CMPedometer.isStepCountingAvailable() {
+            startCountingSteps()
         }
     }
 }
