@@ -48,5 +48,4 @@ class AlarmNotification {
         content.sound = .defaultCritical
         return content
     }
-    
 }

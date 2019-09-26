@@ -53,7 +53,12 @@ class ViewController: UIViewController {
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
         setTimeLabel.text = "Alarm set for \(dateFormatter.string(from: date))"
-        setup(date: date)
+        let resquest = setupRequest(date: date)
+        AlarmNotification.shared.center.add(resquest) { (error) in
+            if error != nil {
+                print(error)
+            }
+        }
     }
     
     private func setup(date: Date) {
@@ -71,18 +76,15 @@ class ViewController: UIViewController {
                 print(error?.localizedDescription)
             }
         }
-
     }
     
-    private func setupRequest(date: Date) -> UNNotificationRequest{
+    private func setupRequest(date: Date) -> UNNotificationRequest {
         let trigger = AlarmNotification.shared.createTrigger(date: date)
         let content = AlarmNotification.shared.createContent(title: "Wake up")
         let identifier = "AlarmId"
         return UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
     }
-    
 }
-
 
 //
 //    private func registerNotification() {

@@ -13,11 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     AlarmNotification.shared.requestAuthorization { (granted) in
         print(granted)
+    }
+    
+    window = UIWindow(frame: UIScreen.main.bounds)
+    let pedomVC = PedometerVC()
+    
+    if let window = window {
+        window.rootViewController = pedomVC
+        window.makeKeyAndVisible()
     }
     
     // Override point for customization after application launch.
