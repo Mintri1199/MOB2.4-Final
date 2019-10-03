@@ -34,6 +34,7 @@ class PedometerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .darkGray
         view.addSubview(statusLabel)
         view.addSubview(stepsCount)
@@ -72,7 +73,9 @@ class PedometerVC: UIViewController {
     
     private func startCountingSteps() {
         pedometer.startUpdates(from: Date()) { [weak self] pedometerData, error in
-            guard let pedometerData = pedometerData, error == nil else { return }
+            guard let pedometerData = pedometerData, error == nil else {
+                return
+            }
             
             DispatchQueue.main.async {
                 self?.stepsCount.text = pedometerData.numberOfSteps.stringValue
