@@ -9,7 +9,11 @@
 import Foundation
 import UserNotifications
 
-// Using the singleton pattern since there should be only one user notification center
+struct NotificationModel {
+    var trigger: UNCalendarNotificationTrigger?
+    var content: UNNotificationContent?
+}
+
 class AlarmNotification {
     
     let center = UNUserNotificationCenter.current()
@@ -27,7 +31,7 @@ class AlarmNotification {
         }
     }
     
-    func getAuthorization(completion: @escaping (Bool) -> ()) {
+    func getAuthorization(completion: @escaping (Bool) -> Void) {
         center.getNotificationSettings { (setting) in
             if setting.authorizationStatus != .authorized {
                 completion(false)
@@ -36,16 +40,32 @@ class AlarmNotification {
             }
         }
     }
+}
+
+class NotificationBuilder {
+    private var notification: NotificationModel?
     
-    func createTrigger(date: Date) -> UNCalendarNotificationTrigger {
-        let calendar = Calendar.current.dateComponents([.hour, .minute], from: date)
-        return UNCalendarNotificationTrigger(dateMatching: calendar, repeats: false)
+    func reset() {
+        notification = NotificationModel()
     }
     
-    func createContent(title: String) -> UNMutableNotificationContent {
+    func setTrigger(_ date: Date) {
+        let calendar = Calendar.current.dateComponents([.hour, .minute], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: calendar, repeats: true)
+        notification?.trigger = trigger
+    }
+    
+    func setContent(_ message: String) {
         let content = UNMutableNotificationContent()
-        content.title = title
+        content.title = message
         content.sound = .defaultCritical
-        return content
+        notification?.content = content
+    }
+    
+    func getNotification() -> NotificationModel? {
+        guard let notification = notification else {
+            return nil
+        }
+        return notification
     }
 }

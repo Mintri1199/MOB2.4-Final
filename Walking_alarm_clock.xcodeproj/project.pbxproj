@@ -15,6 +15,13 @@
 		44447044232712820068AC42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44447042232712820068AC42 /* LaunchScreen.storyboard */; };
 		4444704F232712830068AC42 /* Walking_alarm_clockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444704E232712830068AC42 /* Walking_alarm_clockTests.swift */; };
 		4444705A232712830068AC42 /* Walking_alarm_clockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44447059232712830068AC42 /* Walking_alarm_clockUITests.swift */; };
+		4456CE1F2342AE7000DC86AC /* CreateAlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE1E2342AE7000DC86AC /* CreateAlarmViewModel.swift */; };
+		4456CE212342AEE800DC86AC /* Persistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE202342AEE800DC86AC /* Persistent.swift */; };
+		4456CE232342AFAC00DC86AC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE222342AFAC00DC86AC /* StringExtension.swift */; };
+		4456CE252343099F00DC86AC /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE242343099F00DC86AC /* HomeScreenViewModel.swift */; };
+		4456CE27234597D100DC86AC /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE26234597D100DC86AC /* HomeScreenViewController.swift */; };
+		4456CE292345ABDB00DC86AC /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE282345ABDB00DC86AC /* StepsViewController.swift */; };
+		4456CE2B2345ABEC00DC86AC /* StepsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE2A2345ABEC00DC86AC /* StepsViewModel.swift */; };
 		44C0B568233847320015110B /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B567233847320015110B /* AlarmModel.swift */; };
 		44C0B56A23384C520015110B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B56923384C520015110B /* Notification.swift */; };
 		44C0B56D23386C6B0015110B /* PedometerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B56C23386C6B0015110B /* PedometerVC.swift */; };
@@ -58,6 +65,13 @@
 		44447055232712830068AC42 /* Walking_alarm_clockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Walking_alarm_clockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44447059232712830068AC42 /* Walking_alarm_clockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking_alarm_clockUITests.swift; sourceTree = "<group>"; };
 		4444705B232712830068AC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4456CE1E2342AE7000DC86AC /* CreateAlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmViewModel.swift; sourceTree = "<group>"; };
+		4456CE202342AEE800DC86AC /* Persistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistent.swift; sourceTree = "<group>"; };
+		4456CE222342AFAC00DC86AC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4456CE242343099F00DC86AC /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
+		4456CE26234597D100DC86AC /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		4456CE282345ABDB00DC86AC /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+		4456CE2A2345ABEC00DC86AC /* StepsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewModel.swift; sourceTree = "<group>"; };
 		44C0B567233847320015110B /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		44C0B56923384C520015110B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		44C0B56C23386C6B0015110B /* PedometerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerVC.swift; sourceTree = "<group>"; };
@@ -152,6 +166,7 @@
 				44C0B565233846B00015110B /* Controllers */,
 				44C0B566233846BB0015110B /* Views */,
 				444470392327127F0068AC42 /* AppDelegate.swift */,
+				4456CE222342AFAC00DC86AC /* StringExtension.swift */,
 				44447040232712820068AC42 /* Assets.xcassets */,
 				44447042232712820068AC42 /* LaunchScreen.storyboard */,
 				44447045232712820068AC42 /* Info.plist */,
@@ -182,6 +197,7 @@
 			children = (
 				44C0B567233847320015110B /* AlarmModel.swift */,
 				44C0B56923384C520015110B /* Notification.swift */,
+				4456CE202342AEE800DC86AC /* Persistent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +205,9 @@
 		44C0B564233846A40015110B /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				4456CE1E2342AE7000DC86AC /* CreateAlarmViewModel.swift */,
+				4456CE242343099F00DC86AC /* HomeScreenViewModel.swift */,
+				4456CE2A2345ABEC00DC86AC /* StepsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -197,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				4444703B2327127F0068AC42 /* ViewController.swift */,
+				4456CE26234597D100DC86AC /* HomeScreenViewController.swift */,
+				4456CE282345ABDB00DC86AC /* StepsViewController.swift */,
 				44C0B56C23386C6B0015110B /* PedometerVC.swift */,
 				9D8714612345362C00FE7774 /* HomeCollectionViewController.swift */,
 			);
@@ -433,13 +454,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4456CE212342AEE800DC86AC /* Persistent.swift in Sources */,
+				4456CE252343099F00DC86AC /* HomeScreenViewModel.swift in Sources */,
 				9DBABD72233C3C1100CACD4C /* RoundShadowView.swift in Sources */,
 				44C0B56A23384C520015110B /* Notification.swift in Sources */,
 				44C0B56D23386C6B0015110B /* PedometerVC.swift in Sources */,
 				4444703C2327127F0068AC42 /* ViewController.swift in Sources */,
+				4456CE232342AFAC00DC86AC /* StringExtension.swift in Sources */,
+				4456CE2B2345ABEC00DC86AC /* StepsViewModel.swift in Sources */,
 				9D8714622345362C00FE7774 /* HomeCollectionViewController.swift in Sources */,
 				4444703A2327127F0068AC42 /* AppDelegate.swift in Sources */,
+				4456CE292345ABDB00DC86AC /* StepsViewController.swift in Sources */,
+				4456CE1F2342AE7000DC86AC /* CreateAlarmViewModel.swift in Sources */,
 				44C0B568233847320015110B /* AlarmModel.swift in Sources */,
+				4456CE27234597D100DC86AC /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
