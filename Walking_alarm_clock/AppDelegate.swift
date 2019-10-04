@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    let pedomVC = PedometerVC()
+    let pedomVC = HomeCollectionViewController()
     
     if let window = window {
         window.rootViewController = pedomVC
