@@ -22,11 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    let pedomVC = HomeCollectionViewController()
     
     if let window = window {
-        window.rootViewController = pedomVC
+        let layout = UICollectionViewFlowLayout()
+        let homeVC = HomeCollectionViewController(collectionViewLayout: layout)
+        layout.sectionInset = UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
+        layout.minimumLineSpacing = 50
+        
         window.makeKeyAndVisible()
+        window.rootViewController = UINavigationController(rootViewController: homeVC)
+        
     }
     
     // Override point for customization after application launch.

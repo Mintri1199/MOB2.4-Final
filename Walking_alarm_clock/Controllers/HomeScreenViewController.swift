@@ -16,6 +16,7 @@ class HomeScreenViewController: UIViewController {
         viewModel.delegate = self
         viewModel.updateDelegate = self
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.red
     }
 }
 
@@ -36,7 +37,7 @@ extension HomeScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.alarmArray.isEmpty {
             // Setup empty view
-            return 0
+            return 4
         } else {
             // remove empty view
             return viewModel.alarmArray.count
