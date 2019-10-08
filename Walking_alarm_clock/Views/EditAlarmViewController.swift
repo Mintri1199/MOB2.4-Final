@@ -40,7 +40,8 @@ class EditAlarmViewController: UIViewController {
         
     }
     
-    func getNumSteps() -> Int {
+    func getNumSteps() -> Int
+    {
         
         // parse only int from input using extension
         // if no valid integer is found from input,

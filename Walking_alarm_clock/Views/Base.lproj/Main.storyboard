@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WV8-i4-nkc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -208,5 +208,84 @@
             </objects>
             <point key="canvasLocation" x="1700.0000000000002" y="138.61607142857142"/>
         </scene>
+        <!--Wake Up Screen View Controller-->
+        <scene sceneID="ZV1-a2-wBK">
+            <objects>
+                <viewController storyboardIdentifier="WakeUpScreenViewController" id="WV8-i4-nkc" customClass="WakeUpScreenViewController" customModule="Walking_alarm_clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0HW-39-JjQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgS-VS-b9d">
+                                <rect key="frame" x="63" y="64" width="331" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX : XX AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LA-A7-XIm">
+                                <rect key="frame" x="50" y="138" width="322" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lur-4t-lSI">
+                                <rect key="frame" x="60" y="662" width="294" height="100"/>
+                                <color key="backgroundColor" red="0.88227534294128418" green="0.88240253925323486" blue="0.88224762678146362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Cko-Lh-6Pt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-MH-aX5">
+                                <rect key="frame" x="113" y="687" width="188" height="50"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Start Walking">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wake-up" translatesAutoresizingMaskIntoConstraints="NO" id="mf2-qd-W9m">
+                                <rect key="frame" x="0.0" y="328" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="8c4-ns-tY8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lur-4t-lSI" firstAttribute="leading" secondItem="mfJ-3S-qjp" secondAttribute="leading" constant="60" id="CEY-FT-V8M"/>
+                            <constraint firstItem="TgS-VS-b9d" firstAttribute="width" secondItem="mfJ-3S-qjp" secondAttribute="width" multiplier="0.8" id="Did-mr-svS"/>
+                            <constraint firstItem="mf2-qd-W9m" firstAttribute="centerX" secondItem="mfJ-3S-qjp" secondAttribute="centerX" id="Jv8-gv-TG6"/>
+                            <constraint firstItem="lur-4t-lSI" firstAttribute="centerX" secondItem="mfJ-3S-qjp" secondAttribute="centerX" id="KB1-na-1QD"/>
+                            <constraint firstItem="nQ0-MH-aX5" firstAttribute="centerY" secondItem="lur-4t-lSI" secondAttribute="centerY" id="Oky-L6-7Ha"/>
+                            <constraint firstItem="mf2-qd-W9m" firstAttribute="centerY" secondItem="mfJ-3S-qjp" secondAttribute="centerY" id="XSi-GK-Z5s"/>
+                            <constraint firstItem="5LA-A7-XIm" firstAttribute="top" secondItem="TgS-VS-b9d" secondAttribute="bottom" constant="50" id="bF2-6y-us5"/>
+                            <constraint firstItem="mfJ-3S-qjp" firstAttribute="trailing" secondItem="TgS-VS-b9d" secondAttribute="trailing" constant="20" id="bbO-ig-2ml"/>
+                            <constraint firstItem="nQ0-MH-aX5" firstAttribute="centerX" secondItem="lur-4t-lSI" secondAttribute="centerX" id="beA-AE-XSg"/>
+                            <constraint firstItem="mfJ-3S-qjp" firstAttribute="trailing" secondItem="mf2-qd-W9m" secondAttribute="trailing" id="cJ1-lg-LCP"/>
+                            <constraint firstItem="5LA-A7-XIm" firstAttribute="leading" secondItem="mfJ-3S-qjp" secondAttribute="leading" constant="50" id="hQk-yU-q5j"/>
+                            <constraint firstItem="mf2-qd-W9m" firstAttribute="leading" secondItem="mfJ-3S-qjp" secondAttribute="leading" id="jAq-pd-B7W"/>
+                            <constraint firstItem="TgS-VS-b9d" firstAttribute="top" secondItem="mfJ-3S-qjp" secondAttribute="top" constant="20" id="rxz-hv-pn3"/>
+                            <constraint firstItem="mfJ-3S-qjp" firstAttribute="bottom" secondItem="nQ0-MH-aX5" secondAttribute="bottom" constant="125" id="tRx-f4-Vwa"/>
+                            <constraint firstItem="mfJ-3S-qjp" firstAttribute="bottom" secondItem="lur-4t-lSI" secondAttribute="bottom" constant="100" id="u39-on-1jm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mfJ-3S-qjp"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="TgS-VS-b9d" id="hrJ-18-ky9"/>
+                        <outlet property="startWalkingButton" destination="nQ0-MH-aX5" id="8pB-1H-7lZ"/>
+                        <outlet property="timeLabel" destination="5LA-A7-XIm" id="zin-ZO-x6T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w1g-ve-Su0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455.072463768116" y="137.94642857142856"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="wake-up" width="640" height="479.5"/>
+    </resources>
 </document>
