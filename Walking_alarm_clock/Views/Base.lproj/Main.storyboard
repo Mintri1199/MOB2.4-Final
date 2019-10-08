@@ -122,26 +122,91 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="K5F-Qu-VXM">
-                                <rect key="frame" x="20" y="94" width="374" height="216"/>
+                                <rect key="frame" x="20" y="144" width="374" height="216"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQp-rp-Fgk">
+                                <rect key="frame" x="20" y="64" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="Urq-IQ-mz1" eventType="touchUpInside" id="xU6-PC-1EF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HK-rb-4hd" userLabel="Walk         ">
+                                <rect key="frame" x="119.5" y="418" width="42.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7g-vQ-5ro">
+                                <rect key="frame" x="182" y="410" width="50" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3Kf-ft-Lbn"/>
+                                    <constraint firstAttribute="width" constant="50" id="Nvk-V9-uAe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAw-35-tBW">
+                                <rect key="frame" x="252" y="418" width="50" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to wake up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPa-hz-hZJ">
+                                <rect key="frame" x="160.5" y="480" width="93.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSS-e5-qPl">
+                                <rect key="frame" x="357" y="64" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="Urq-IQ-mz1" eventType="touchUpInside" id="q7O-KH-rZD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="jSS-e5-qPl" firstAttribute="top" secondItem="feJ-AO-Lhs" secondAttribute="top" constant="20" id="3dX-G6-Zf1"/>
+                            <constraint firstItem="gAw-35-tBW" firstAttribute="centerY" secondItem="U7g-vQ-5ro" secondAttribute="centerY" id="3p6-MS-01E"/>
+                            <constraint firstItem="HPa-hz-hZJ" firstAttribute="top" secondItem="U7g-vQ-5ro" secondAttribute="bottom" constant="30" id="4RD-ib-v6b"/>
                             <constraint firstItem="K5F-Qu-VXM" firstAttribute="trailing" secondItem="feJ-AO-Lhs" secondAttribute="trailing" constant="-20" id="EGR-f0-R0A"/>
-                            <constraint firstItem="K5F-Qu-VXM" firstAttribute="top" secondItem="feJ-AO-Lhs" secondAttribute="top" constant="50" id="LJG-Lo-wi6"/>
+                            <constraint firstItem="U7g-vQ-5ro" firstAttribute="leading" secondItem="5HK-rb-4hd" secondAttribute="trailing" constant="20" id="Khq-aO-vpF"/>
+                            <constraint firstItem="K5F-Qu-VXM" firstAttribute="top" secondItem="iQp-rp-Fgk" secondAttribute="bottom" constant="50" id="LJG-Lo-wi6"/>
                             <constraint firstItem="K5F-Qu-VXM" firstAttribute="leading" secondItem="feJ-AO-Lhs" secondAttribute="leading" constant="20" id="QJ9-on-xGL"/>
+                            <constraint firstItem="iQp-rp-Fgk" firstAttribute="leading" secondItem="feJ-AO-Lhs" secondAttribute="leading" constant="20" id="SoG-1o-eTu"/>
+                            <constraint firstItem="gAw-35-tBW" firstAttribute="leading" secondItem="U7g-vQ-5ro" secondAttribute="trailing" constant="20" id="Um1-i1-eLf"/>
+                            <constraint firstItem="iQp-rp-Fgk" firstAttribute="top" secondItem="feJ-AO-Lhs" secondAttribute="top" constant="20" id="cBK-yb-dFZ"/>
+                            <constraint firstItem="U7g-vQ-5ro" firstAttribute="top" secondItem="K5F-Qu-VXM" secondAttribute="bottom" constant="50" id="jr4-nU-bQu"/>
+                            <constraint firstItem="5HK-rb-4hd" firstAttribute="centerY" secondItem="U7g-vQ-5ro" secondAttribute="centerY" id="pIQ-ME-TkV"/>
+                            <constraint firstItem="feJ-AO-Lhs" firstAttribute="trailing" secondItem="jSS-e5-qPl" secondAttribute="trailing" constant="20" id="pKG-s9-5QQ"/>
+                            <constraint firstItem="U7g-vQ-5ro" firstAttribute="centerX" secondItem="feJ-AO-Lhs" secondAttribute="centerX" id="uaK-Jv-AXg"/>
+                            <constraint firstItem="HPa-hz-hZJ" firstAttribute="centerX" secondItem="feJ-AO-Lhs" secondAttribute="centerX" id="xcd-hb-Ski"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="feJ-AO-Lhs"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="iQp-rp-Fgk" id="X5x-Rg-O3a"/>
+                        <outlet property="doneButton" destination="jSS-e5-qPl" id="Xc0-mC-fil"/>
+                        <outlet property="stepsNumberInputField" destination="U7g-vQ-5ro" id="2SN-Cd-Xuo"/>
+                        <outlet property="timePicker" destination="K5F-Qu-VXM" id="0Ft-mx-wTx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xI8-RU-gPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1701" y="139"/>
+            <point key="canvasLocation" x="1700.0000000000002" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
