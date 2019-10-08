@@ -24,18 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     
     if let window = window {
-        let layout = UICollectionViewFlowLayout()
-        let homeVC = HomeCollectionViewController(collectionViewLayout: layout)
-        layout.sectionInset = UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
-        layout.minimumLineSpacing = 50
-
-        window.rootViewController = UINavigationController(rootViewController: homeVC)
-        
+//        let layout = UICollectionViewFlowLayout()
+//        let homeVC = HomeCollectionViewController(collectionViewLayout: layout)
+//        layout.sectionInset = UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
+//        layout.minimumLineSpacing = 50
+//
+//        window.rootViewController = UINavigationController(rootViewController: homeVC)
+//
        
         
 // uncomment the following, and comment out the above to display wake up screen, instead of alarms collection view
-//        let wakeupScreenVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController")
-//        window.rootViewController = wakeupScreenVC
+        let wakeupScreenVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController")
+        window.rootViewController = wakeupScreenVC
         
         window.makeKeyAndVisible()
 

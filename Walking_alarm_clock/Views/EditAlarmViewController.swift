@@ -36,7 +36,7 @@ class EditAlarmViewController: UIViewController {
         let alarmTime = timePicker.date
         print(alarmTime)
         
-        // TODO: save this to alarm model
+        // TODO: save this new alarm
         
     }
     

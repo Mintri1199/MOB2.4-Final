@@ -29,6 +29,8 @@
 		9D3025E9234C16EC005C5547 /* EditAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3025E8234C16EC005C5547 /* EditAlarmViewController.swift */; };
 		9D3025EC234C3B33005C5547 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3025EB234C3B33005C5547 /* Int.swift */; };
 		9D3025EE234C4CE2005C5547 /* WakeUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3025ED234C4CE2005C5547 /* WakeUpScreenViewController.swift */; };
+		9D3025F0234D238A005C5547 /* CountStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3025EF234D238A005C5547 /* CountStepsViewController.swift */; };
+		9D3025F2234D23C3005C5547 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3025F1234D23C3005C5547 /* Date.swift */; };
 		9D8714622345362C00FE7774 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8714612345362C00FE7774 /* HomeCollectionViewController.swift */; };
 		9DDB1DF2234B20EB00EBB60E /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB1DF1234B20EB00EBB60E /* HomeCollectionViewCell.swift */; };
 		FB3FFA11175EF58718E102FF /* Pods_Walking_alarm_clock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B466ECBC57152E08CD7E94B /* Pods_Walking_alarm_clock.framework */; };
@@ -82,6 +84,8 @@
 		9D3025E8234C16EC005C5547 /* EditAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmViewController.swift; sourceTree = "<group>"; };
 		9D3025EB234C3B33005C5547 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		9D3025ED234C4CE2005C5547 /* WakeUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpScreenViewController.swift; sourceTree = "<group>"; };
+		9D3025EF234D238A005C5547 /* CountStepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStepsViewController.swift; sourceTree = "<group>"; };
+		9D3025F1234D23C3005C5547 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		9D8714612345362C00FE7774 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		9DDB1DF1234B20EB00EBB60E /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AEF4FF79CD679FC9FFEF3DE4 /* Pods-Walking_alarm_clockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Walking_alarm_clockTests.debug.xcconfig"; path = "Target Support Files/Pods-Walking_alarm_clockTests/Pods-Walking_alarm_clockTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 				9DDB1DF1234B20EB00EBB60E /* HomeCollectionViewCell.swift */,
 				9D3025E8234C16EC005C5547 /* EditAlarmViewController.swift */,
 				9D3025ED234C4CE2005C5547 /* WakeUpScreenViewController.swift */,
+				9D3025EF234D238A005C5547 /* CountStepsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				9D3025EB234C3B33005C5547 /* Int.swift */,
+				9D3025F1234D23C3005C5547 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 				9D3025EC234C3B33005C5547 /* Int.swift in Sources */,
 				4444703C2327127F0068AC42 /* ViewController.swift in Sources */,
 				4456CE232342AFAC00DC86AC /* StringExtension.swift in Sources */,
+				9D3025F0234D238A005C5547 /* CountStepsViewController.swift in Sources */,
 				4456CE2B2345ABEC00DC86AC /* StepsViewModel.swift in Sources */,
 				9D8714622345362C00FE7774 /* HomeCollectionViewController.swift in Sources */,
 				4444703A2327127F0068AC42 /* AppDelegate.swift in Sources */,
@@ -486,6 +493,7 @@
 				4456CE292345ABDB00DC86AC /* StepsViewController.swift in Sources */,
 				4456CE1F2342AE7000DC86AC /* CreateAlarmViewModel.swift in Sources */,
 				9D3025EE234C4CE2005C5547 /* WakeUpScreenViewController.swift in Sources */,
+				9D3025F2234D23C3005C5547 /* Date.swift in Sources */,
 				44C0B568233847320015110B /* AlarmModel.swift in Sources */,
 				4456CE27234597D100DC86AC /* HomeScreenViewController.swift in Sources */,
 			);

@@ -15,28 +15,25 @@ class WakeUpScreenViewController: UIViewController {
     @IBOutlet weak var startWalkingButton: UIButton!
     
     let date = Date()
-    let format = "MMM dd, yyy EEEE"
-    let dateFormatter = DateFormatter()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // date label
-        dateFormatter.dateFormat = format
-        dateLabel.text = dateFormatter.string(from: date)
+        dateLabel.text = date.toString()
                 
         // current time label
         timeLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.tick) , userInfo: nil, repeats: true)
         
+        // start walking button
         startWalkingButton.titleLabel?.text = "Start Walking"
         
     }
     
     
     @objc func tick() {
-        dateFormatter.dateFormat = format
-        dateLabel.text = dateFormatter.string(from: date)
+        dateLabel.text = date.toString()
         timeLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
     }
     
