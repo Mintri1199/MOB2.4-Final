@@ -11,7 +11,9 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    
+    let viewModel = HomeScreenViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,13 +32,13 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         
         navigationItem.title = "Alarms"
         navigationController?.navigationBar.prefersLargeTitles = true
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
     
     @objc func addTapped() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "EditAlarmViewController")
+        self.present(controller, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
@@ -57,13 +59,13 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 2
+        return viewModel.alarmArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
         // Configure the cell
+//        cell.timeLabel.text = String(viewModel.alarmArray[indexPath.row].time!)
         return cell
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
-    
+    @IBOutlet weak var timeLabel: UILabel!
     let containerView = UIView()
     let cornerRadius: CGFloat = 15.0
     
@@ -53,5 +53,4 @@ class HomeCollectionViewCell: UICollectionViewCell {
         containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
-    
 }
