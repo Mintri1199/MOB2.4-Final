@@ -16,8 +16,10 @@ class CountStepsViewController: UIViewController {
     @IBOutlet weak var dismissView: UIView!
     @IBOutlet weak var dismissButton: UIButton!
     @IBAction func dismissTapped(_ sender: Any) {
+        // TODO: go back to home collection view, not wake up screen
         self.dismiss(animated: true, completion: nil)
     }
+    
     let date = Date()
     let requiredSteps = 3
     var currentSteps: Int = 0 {

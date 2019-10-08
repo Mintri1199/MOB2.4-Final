@@ -66,7 +66,7 @@
         <!--Alarm-->
         <scene sceneID="0XA-2h-i8F">
             <objects>
-                <collectionViewController title="Alarm" id="xcB-zp-Byr" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="HomeCollectionViewController" title="Alarm" id="xcB-zp-Byr" customClass="HomeCollectionViewController" customModule="Walking_alarm_clock" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NVf-1I-uJ1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,29 +78,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="61n-z8-EU7" customClass="HomeCollectionViewCell" customModule="Walking_alarm_clock" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" reuseIdentifier="Cell" id="61n-z8-EU7" customClass="HomeCollectionViewCell" customModule="Walking_alarm_clock" customModuleProvider="target">
                                 <rect key="frame" x="31.5" y="0.0" width="351" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="351" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPH-4T-FmK">
-                                            <rect key="frame" x="13" y="13" width="101.5" height="48"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="qPH-4T-FmK" firstAttribute="leading" secondItem="61n-z8-EU7" secondAttribute="leadingMargin" constant="5" id="bfx-C4-aED"/>
-                                    <constraint firstItem="qPH-4T-FmK" firstAttribute="top" secondItem="61n-z8-EU7" secondAttribute="topMargin" constant="5" id="jRK-dL-Bwz"/>
-                                </constraints>
                                 <size key="customSize" width="351" height="170"/>
-                                <connections>
-                                    <outlet property="timeLabel" destination="qPH-4T-FmK" id="b93-dP-sgu"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -238,7 +223,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Xiv-mc-lK8" kind="show" id="MVA-U0-yty"/>
+                                            <segue destination="Xiv-mc-lK8" kind="presentation" id="owd-31-o6N"/>
                                         </connections>
                                     </button>
                                 </subviews>
