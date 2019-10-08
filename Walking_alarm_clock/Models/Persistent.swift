@@ -65,6 +65,7 @@ class Persistent {
     func addAlarm(_ alarm: AlarmModel) {
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: alarm, requiringSecureCoding: true)
+            print(data)
             UserDefaults.standard.set(data, forKey: alarm.alarmIdentifier)
             
             if var array = self.fetchAlarmIds() {

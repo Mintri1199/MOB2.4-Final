@@ -40,6 +40,10 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         let controller = storyboard.instantiateViewController(withIdentifier: "EditAlarmViewController")
         self.present(controller, animated: true, completion: nil)
     }
+    
+    @objc private func testingAddTapped() {
+        
+    }
     /*
     // MARK: - Navigation
 
