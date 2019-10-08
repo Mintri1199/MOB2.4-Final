@@ -22,7 +22,6 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
 
         // Register cell classes
         self.collectionView?.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
         collectionView.backgroundColor = UIColor.white
         setupBarView()
@@ -32,7 +31,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         
         navigationItem.title = "Alarms"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(testingAddTapped))
     }
     
     @objc func addTapped() {
@@ -42,7 +41,10 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     @objc private func testingAddTapped() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "CreateVC") as? CreateAlarmViewController {
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     /*
     // MARK: - Navigation
@@ -75,7 +77,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: view.frame.width - 50, height: view.frame.height/5)
+        return CGSize(width: view.frame.width - 50, height: view.frame.height / 5)
     }
 
     // MARK: UICollectionViewDelegate
@@ -108,5 +110,4 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     
     }
     */
-
 }

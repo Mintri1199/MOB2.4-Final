@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class ViewController: UIViewController {
+class CreateAlarmViewController: UIViewController {
     
     @IBOutlet private weak var setTimeButton: UIButton!
     @IBOutlet private weak var setTimeLabel: UILabel!
@@ -36,15 +36,18 @@ class ViewController: UIViewController {
         timeTextField.text = String.formatTime(date: date)
     }
     
-    @objc private func doneTapped() {
-        
-//        Guard to get the number of step and date exist, setpsTextFieldValidation() else return
-            
-//        viewModel.alarmBuilder.reset()
-//        viewModel.alarmBuilder.setMessage("Wake up")
-//        viewModel.alarmBuilder.setSteps(<#T##num: Int##Int#>)
-//        viewModel.alarmBuilder.setTime(<#T##time: Date##Date#>)
-//        viewModel.completeNotification()
+    @IBAction func doneTapped(_ sender: Any) {
+        guard let date = timePicker?.date else {
+                    return
+                }
+                    
+                viewModel.alarmBuilder.reset()
+                viewModel.alarmBuilder.setMessage("Wake up")
+                viewModel.alarmBuilder.setSteps(10)
+                viewModel.alarmBuilder.setTime(date)
+                viewModel.completeAlarm()
+                viewModel.setPersistent()
+        navigationController?.popViewController(animated: true)
     }
     
     private func stepsTextFieldValidation() -> Bool {

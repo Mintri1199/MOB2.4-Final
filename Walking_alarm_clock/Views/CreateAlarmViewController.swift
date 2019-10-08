@@ -55,7 +55,6 @@ class CreateAlarmViewController: UIViewController {
         viewModel.alarmBuilder.setSteps(steps)
         viewModel.alarmBuilder.setTime(date)
         viewModel.completeNotification()
-        Persistent.shared.addAlarm(viewModel.alarmBuilder.getAlarm()!)
         delegate?.reloadModel()
         navigationController?.popViewController(animated: true)
     }

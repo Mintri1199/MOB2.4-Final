@@ -16,6 +16,7 @@ class HomeScreenViewController: UIViewController {
         viewModel.delegate = self
         viewModel.updateDelegate = self
         // Do any additional setup after loading the view.
+        print(Persistent.shared.fetchAlarmIds())
         self.view.backgroundColor = UIColor.red
     }
 }
