@@ -26,14 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if let window = window {
         let layout = UICollectionViewFlowLayout()
         let homeVC = HomeCollectionViewController(collectionViewLayout: layout)
-        layout.sectionInset = UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
-        layout.minimumLineSpacing = 50
-
-        window.rootViewController = UINavigationController(rootViewController: homeVC)
-        
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeCollectionViewController") as? HomeCollectionViewController
-        let navigationController = UINavigationController(rootViewController: viewController!)
+        let navigationController = UINavigationController(rootViewController: homeVC)
         window.rootViewController = navigationController
         
 // uncomment the following, and comment out the above to display wake up screen, instead of alarms collection view
