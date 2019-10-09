@@ -31,18 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window.rootViewController = UINavigationController(rootViewController: homeVC)
         
-//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeCollectionViewController") as? HomeCollectionViewController
-//        window.rootViewController = UINavigationController(rootViewController: viewController!)
-       
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeCollectionViewController") as? HomeCollectionViewController
+        let navigationController = UINavigationController(rootViewController: viewController!)
+        window.rootViewController = navigationController
         
 // uncomment the following, and comment out the above to display wake up screen, instead of alarms collection view
 //        let wakeupScreenVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController")
 //        window.rootViewController = wakeupScreenVC
 //
+        
         window.makeKeyAndVisible()
-
-
     }
     
     // Override point for customization after application launch.
@@ -71,3 +70,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 }
+
+// TODO: extension. when receive notification, present wake up screen
