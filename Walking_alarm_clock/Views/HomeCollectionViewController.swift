@@ -20,6 +20,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         self.collectionView?.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.backgroundColor = UIColor.white
         print(Persistent.shared.fetchAlarmIds())
+        
         setupBarView()
     }
     
@@ -45,7 +46,6 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
             controller.delegate = self
             self.present(controller, animated: true, completion: nil)
         }
-        
     }
     
     @objc private func testingAddTapped() {
@@ -76,7 +76,6 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         return CGSize(width: view.frame.width - 50, height: view.frame.height / 5)
     }
 }
-
 
 extension HomeCollectionViewController: NewlyAddedTime {
     func reloadData() {

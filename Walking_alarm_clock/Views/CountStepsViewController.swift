@@ -7,58 +7,63 @@
 //
 
 import UIKit
+import CoreMotion
 
 class CountStepsViewController: UIViewController {
-
+    
     @IBOutlet weak private var dateLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var stepsNum: UILabel!
     @IBOutlet weak private var dismissView: UIView!
     @IBOutlet weak private var dismissButton: UIButton!
-    @IBAction private func dismissTapped(_ sender: Any) {
-        // TODO: go back to home collection view, not wake up screen
-        self.dismiss(animated: true, completion: nil)
-    }
+    private let date = Date()
+    private let activityManager = CMMotionActivityManager()
+    private let pedometer = CMPedometer()
     
-    let date = Date()
-    let requiredSteps = 3
+    var requiredSteps: Int? = 20
     var currentSteps: Int = 0 {
         didSet {
-            // update steps label when steps increase
-            self.stepsNum.text = String(currentSteps)
-            
-            // if met required steps, show dismiss view
-            if currentSteps == requiredSteps {
-                dismissView.isHidden = false
-                dismissButton.isHidden = false
+            if let steps = self.requiredSteps {
+    
+                DispatchQueue.main.async {
+                    self.stepsNum.text = "\(self.currentSteps)/ \(self.requiredSteps ?? 20)"
+                }
+                
+                if currentSteps == steps {
+                    pedometer.stopUpdates()
+                    DispatchQueue.main.async {
+                        self.dismissView.isHidden = false
+                        self.dismissButton.isHidden = false
+                    }
+                }
             }
         }
     }
     
+    @IBAction private func dismissTapped(_ sender: Any) {
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // date label
         dateLabel.text = date.toString()
-                
-        // current time label
         timeLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
+        stepsNum.text = "0/ \(requiredSteps ?? 20)"
+        startTracking()
     }
     
-    @objc func tick() {
-        dateLabel.text = date.toString()
-        timeLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
-        currentSteps += 1
+    private func startTracking() {
+        if CMPedometer.isStepCountingAvailable() {
+            startCountingSteps()
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func startCountingSteps() {
+        pedometer.startUpdates(from: Date()) { [weak self] pedometerData, error in
+            guard let pedometerData = pedometerData, error == nil else {
+                return
+            }
+            self?.currentSteps = pedometerData.numberOfSteps.intValue
+        }
     }
-    */
 }
