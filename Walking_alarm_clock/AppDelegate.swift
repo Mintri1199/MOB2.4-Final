@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,12 +21,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(granted)
         }
     }
+    AlarmNotification.shared.center.delegate = self
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    let pedomVC = PedometerVC()
     
     if let window = window {
-        window.rootViewController = pedomVC
+        let layout = UICollectionViewFlowLayout()
+        let homeVC = HomeCollectionViewController(collectionViewLayout: layout)
+        let navigationController = UINavigationController(rootViewController: homeVC)
+        window.rootViewController = navigationController
+        
+// uncomment the following, and comment out the above to display wake up screen, instead of alarms collection view
+//        let wakeupScreenVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController")
+//        window.rootViewController = wakeupScreenVC
+//
+        
         window.makeKeyAndVisible()
     }
     
@@ -54,4 +64,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("lol")
+        let wakeupScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController") as? WakeUpScreenViewController
+        if let steps = Persistent.shared.fetchOneAlarm(response.notification.request.identifier)?.requiredSteps {
+            wakeupScreen?.requireSteps = steps
+        }
+        wakeupScreen?.modalPresentationStyle = .fullScreen
+        
+        window?.rootViewController?.present(wakeupScreen!, animated: true, completion: nil)   
+    }
 }
