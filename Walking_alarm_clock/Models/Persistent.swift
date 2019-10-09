@@ -103,6 +103,7 @@ class Persistent {
     
     func deleteOneAlarm(_ id: String) {
         UserDefaults.standard.removeObject(forKey: id)
+        center.center.removePendingNotificationRequests(withIdentifiers: [id])
         if let oldArray = fetchAlarmIds() {
             let newArray = oldArray.filter { $0 != id }
             updateArray(newArray)
@@ -115,6 +116,8 @@ class Persistent {
         guard let idArray = fetchAlarmIds() else {
             return
         }
+        
+        center.center.removePendingNotificationRequests(withIdentifiers: idArray)
         
         idArray.forEach { id in
             deleteOneAlarm(id)

@@ -19,7 +19,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         layoutView()
-        enableSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+//        enableSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
 
     }
     
@@ -30,7 +30,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @objc func switchChanged(mySwitch: UISwitch) {
         let isOn = mySwitch.isOn // returns true/false
         print(isOn)
-        
     }
     
     func layoutView() {

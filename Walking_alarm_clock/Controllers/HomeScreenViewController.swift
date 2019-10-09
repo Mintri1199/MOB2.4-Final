@@ -13,26 +13,26 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
-        viewModel.updateDelegate = self
+//        viewModel.delegate = self
+//        viewModel.updateDelegate = self
         // Do any additional setup after loading the view.
         print(Persistent.shared.fetchAlarmIds())
         self.view.backgroundColor = UIColor.red
     }
 }
 
-extension HomeScreenViewController: ShouldDeleteRow, ShouldUpdateRow {
-    
-    func deleteRow(_ index: Int) {
-        // collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
-    }
-    
-    func updateRow(_ index: Int) {
-//        collectionView.performBatchUpdates({
-//            self.collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
-//        }, completion: nil)
-    }
-}
+//extension HomeScreenViewController: ShouldDeleteRow, ShouldUpdateRow {
+//
+//    func deleteRow(_ index: Int) {
+//        // collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
+//    }
+//
+//    func updateRow(_ index: Int) {
+////        collectionView.performBatchUpdates({
+////            self.collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
+////        }, completion: nil)
+//    }
+//}
 
 extension HomeScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
