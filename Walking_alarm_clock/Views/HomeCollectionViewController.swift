@@ -13,7 +13,8 @@ private let reuseIdentifier = "Cell"
 class HomeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let viewModel = HomeScreenViewModel()
-    
+    var tempModel = ["alarm1", "alarm2", "alarm3"]
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,7 +66,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         
-        return 3
+        return tempModel.count
 //        return viewModel.alarmArray.count
     }
 
@@ -79,6 +80,38 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: view.frame.width - 50, height: view.frame.height/5)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Delete?", message: "Are you sure you want to delete this alarm?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+        //        remove from datasource array
+        //        viewModel.alarmArray.remove(at: indexPath.row)
+                self.tempModel.remove(at: indexPath.row)
+                
+                // get the alarm id
+                
+                //remove from persistent
+        //        Persistent.shared.deleteOneAlarm(<#T##id: String##String#>)
+                
+                // reload collection view
+                collectionView.deleteItems(at: [indexPath])
+
+            case .cancel:
+                self.dismiss(animated: true, completion: nil)
+
+            case .destructive:
+                print("destructive")
+                
+            @unknown default:
+                print("unknown")
+            }}))
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
 
     // MARK: UICollectionViewDelegate
