@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(granted)
         }
     }
+    AlarmNotification.shared.center.delegate = self
     
     window = UIWindow(frame: UIScreen.main.bounds)
     
@@ -66,4 +67,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("lol")
+        let wakeupScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController") as? WakeUpScreenViewController
+        
+//        window?.rootViewController?.navigationController?.pushViewController(wakeupScreen!, animated: true)
+        wakeupScreen?.modalPresentationStyle = .fullScreen
+        window?.rootViewController?.present(wakeupScreen!, animated: true, completion: nil)
+        
+    }
+    
+    
 }
