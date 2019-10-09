@@ -20,16 +20,11 @@ class CountStepsViewController: UIViewController {
     private let activityManager = CMMotionActivityManager()
     private let pedometer = CMPedometer()
     
-    var requiredSteps: Int? = 20
+    var requiredSteps: Int?
     var currentSteps: Int = 0 {
         didSet {
             if let steps = self.requiredSteps {
-    
-                DispatchQueue.main.async {
-                    self.stepsNum.text = "\(self.currentSteps)/ \(self.requiredSteps ?? 20)"
-                }
-                
-                if currentSteps == steps {
+                if currentSteps >= steps {
                     pedometer.stopUpdates()
                     DispatchQueue.main.async {
                         self.dismissView.isHidden = false
@@ -64,6 +59,10 @@ class CountStepsViewController: UIViewController {
                 return
             }
             self?.currentSteps = pedometerData.numberOfSteps.intValue
+            
+            DispatchQueue.main.async {
+                self!.stepsNum.text = "\(self!.currentSteps)/ \(self!.requiredSteps!)"
+            }
         }
     }
 }

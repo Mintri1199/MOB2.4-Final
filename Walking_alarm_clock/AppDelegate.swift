@@ -70,12 +70,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("lol")
         let wakeupScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController") as? WakeUpScreenViewController
-        
-//        window?.rootViewController?.navigationController?.pushViewController(wakeupScreen!, animated: true)
+        if let steps = Persistent.shared.fetchOneAlarm(response.notification.request.identifier)?.requiredSteps {
+            wakeupScreen?.requireSteps = steps
+        }
         wakeupScreen?.modalPresentationStyle = .fullScreen
-        window?.rootViewController?.present(wakeupScreen!, animated: true, completion: nil)
         
+        window?.rootViewController?.present(wakeupScreen!, animated: true, completion: nil)   
     }
-    
-    
 }

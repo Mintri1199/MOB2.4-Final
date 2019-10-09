@@ -13,8 +13,9 @@ class WakeUpScreenViewController: UIViewController {
     @IBOutlet weak private var dateLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var startWalkingButton: UIButton!
+    
     let date = Date()
-
+    var requireSteps: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,9 +29,11 @@ class WakeUpScreenViewController: UIViewController {
     }
     
     @IBAction private func startWalkingTapped(_ sender: Any) {
-        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CountStepsViewController") as? CountStepsViewController else {
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CountStepsViewController") as? CountStepsViewController,
+        let steps = requireSteps else {
             return
         }
+        vc.requiredSteps = steps
         self.present(vc, animated: true, completion: nil)
     }
     
