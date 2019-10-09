@@ -36,8 +36,9 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
-        layout.minimumLineSpacing = 50
+        layout.minimumLineSpacing = 30
+        layout.minimumInteritemSpacing = 30
+        collectionView.collectionViewLayout = layout
     }
     
     @objc private func addTapped() {
