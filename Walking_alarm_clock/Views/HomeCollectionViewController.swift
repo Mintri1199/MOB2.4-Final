@@ -55,7 +55,6 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Setup empty view or remove it if the array is empty
         return viewModel.alarmArray.count
     }
 
@@ -67,6 +66,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         let selectedModel = viewModel.alarmArray[indexPath.row]
         cell.timeLabel.text = String.formatTime(date: selectedModel.time)
         cell.enableSwitch.isOn = selectedModel.enable
+        cell.enableSwitch.addTarget(self, action: #selector(enableButtonTapped(sender:event:)), for: .touchUpInside)
         return cell
     }
     
@@ -102,7 +102,26 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         self.present(alert, animated: true, completion: nil)
     }
     
-    // TODO: Implemnt OBJC func for the cell switch
+    @objc func enableButtonTapped(sender: UISwitch, event: UIEvent) {
+        guard let customCell = sender.superview?.superview as? HomeCollectionViewCell else {
+            return
+        }
+        guard let indexPath = collectionView.indexPath(for: customCell) else {
+            return
+        }
+        
+        let selectedModel = viewModel.alarmArray[indexPath.row]
+        selectedModel.enable = sender.isOn
+        Persistent.shared.updateOneAlarm(from: selectedModel.alarmIdentifier, to: selectedModel)
+        viewModel.updateOne(selectedModel.alarmIdentifier)
+        if sender.isOn {
+            print("add alarm")
+            viewModel.addNotification(selectedModel.alarmIdentifier)
+        } else {
+            print("remove alarm")
+            viewModel.removeNotification(selectedModel.alarmIdentifier)
+        }
+    }
 }
  
 extension HomeCollectionViewController: NewlyAddedTime {
