@@ -31,7 +31,11 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         
         navigationItem.title = "Alarms"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(testingAddTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
+        layout.minimumLineSpacing = 50
     }
     
     @objc func addTapped() {
@@ -65,14 +69,16 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return viewModel.alarmArray.count
+        
+        return 3
+//        return viewModel.alarmArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HomeCollectionViewCell
         // Configure the cell
 //        cell.timeLabel.text = String(viewModel.alarmArray[indexPath.row].time!)
-        return cell
+        return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

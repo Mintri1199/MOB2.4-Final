@@ -28,10 +28,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeVC = HomeCollectionViewController(collectionViewLayout: layout)
         layout.sectionInset = UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
         layout.minimumLineSpacing = 50
-        
-        window.makeKeyAndVisible()
+
         window.rootViewController = UINavigationController(rootViewController: homeVC)
         
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeCollectionViewController") as? HomeCollectionViewController
+//        window.rootViewController = UINavigationController(rootViewController: viewController!)
+       
+        
+// uncomment the following, and comment out the above to display wake up screen, instead of alarms collection view
+//        let wakeupScreenVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController")
+//        window.rootViewController = wakeupScreenVC
+//
+        window.makeKeyAndVisible()
+
+
     }
     
     // Override point for customization after application launch.
