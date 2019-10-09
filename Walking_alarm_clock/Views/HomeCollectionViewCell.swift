@@ -30,7 +30,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @objc func switchChanged(mySwitch: UISwitch) {
         let isOn = mySwitch.isOn // returns true/false
         print(isOn)
-        // todo: upadte this alarm's enable property
+        
     }
     
     func layoutView() {

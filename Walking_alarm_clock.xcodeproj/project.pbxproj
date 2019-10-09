@@ -21,7 +21,6 @@
 		4456CE252343099F00DC86AC /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE242343099F00DC86AC /* HomeScreenViewModel.swift */; };
 		4456CE27234597D100DC86AC /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE26234597D100DC86AC /* HomeScreenViewController.swift */; };
 		4456CE292345ABDB00DC86AC /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE282345ABDB00DC86AC /* StepsViewController.swift */; };
-		4456CE2B2345ABEC00DC86AC /* StepsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456CE2A2345ABEC00DC86AC /* StepsViewModel.swift */; };
 		44C0B568233847320015110B /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B567233847320015110B /* AlarmModel.swift */; };
 		44C0B56A23384C520015110B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B56923384C520015110B /* Notification.swift */; };
 		44C0B56D23386C6B0015110B /* PedometerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0B56C23386C6B0015110B /* PedometerVC.swift */; };
@@ -76,7 +75,6 @@
 		4456CE242343099F00DC86AC /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		4456CE26234597D100DC86AC /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		4456CE282345ABDB00DC86AC /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
-		4456CE2A2345ABEC00DC86AC /* StepsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewModel.swift; sourceTree = "<group>"; };
 		44C0B567233847320015110B /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		44C0B56923384C520015110B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		44C0B56C23386C6B0015110B /* PedometerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerVC.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			children = (
 				4456CE1E2342AE7000DC86AC /* CreateAlarmViewModel.swift */,
 				4456CE242343099F00DC86AC /* HomeScreenViewModel.swift */,
-				4456CE2A2345ABEC00DC86AC /* StepsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -486,7 +483,6 @@
 				4444703C2327127F0068AC42 /* ViewController.swift in Sources */,
 				4456CE232342AFAC00DC86AC /* StringExtension.swift in Sources */,
 				9D3025F0234D238A005C5547 /* CountStepsViewController.swift in Sources */,
-				4456CE2B2345ABEC00DC86AC /* StepsViewModel.swift in Sources */,
 				9D8714622345362C00FE7774 /* HomeCollectionViewController.swift in Sources */,
 				4444703A2327127F0068AC42 /* AppDelegate.swift in Sources */,
 				9D3025E9234C16EC005C5547 /* EditAlarmViewController.swift in Sources */,

@@ -17,11 +17,8 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.collectionView?.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.backgroundColor = UIColor.white
-        print(Persistent.shared.fetchAlarmIds())
-        
         setupBarView()
     }
     
@@ -81,24 +78,35 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         let alert = UIAlertController(title: "Delete?", message: "Are you sure you want to delete this alarm?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
-            switch action.style{
+            switch action.style {
             case .default:
-        //        remove from datasource array
-        //        viewModel.alarmArray.remove(at: indexPath.row)
-                self.tempModel.remove(at: indexPath.row)
-                
-                // get the alarm id
-                
-                //remove from persistent
-        //        Persistent.shared.deleteOneAlarm(<#T##id: String##String#>)
-                
-                // reload collection view
-                collectionView.deleteItems(at: [indexPath])
-}
 
+                let id = self.viewModel.alarmArray[indexPath.row].alarmIdentifier
+                self.viewModel.alarmArray.remove(at: indexPath.row)
+                
+                Persistent.shared.deleteOneAlarm(id)
+                // Todo: implement delete method for alarm notifcation
+                collectionView.deleteItems(at: [indexPath])
+                collectionView.reloadData()
+
+            case .cancel:
+                self.dismiss(animated: true, completion: nil)
+
+            case .destructive:
+                print("destructive")
+                
+            @unknown default:
+                print("unknown")
+            }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // TODO: Implemnt OBJC func for the cell switch
+}
+ 
 extension HomeCollectionViewController: NewlyAddedTime {
     func reloadData() {
         viewModel.populateArray()
         collectionView.reloadData()
     }
-}
+ }
