@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,14 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeCollectionViewController") as? HomeCollectionViewController
 //        window.rootViewController = UINavigationController(rootViewController: viewController!)
        
-        
 // uncomment the following, and comment out the above to display wake up screen, instead of alarms collection view
 //        let wakeupScreenVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "WakeUpScreenViewController")
 //        window.rootViewController = wakeupScreenVC
 //
         window.makeKeyAndVisible()
-
-
     }
     
     // Override point for customization after application launch.
@@ -70,4 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
 }

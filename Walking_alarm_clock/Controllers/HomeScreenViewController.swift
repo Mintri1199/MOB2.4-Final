@@ -46,12 +46,7 @@ extension HomeScreenViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "alarmCell", for: indexPath) // as Custom Cell Class (guard this as well)
-        let model = viewModel.alarmArray[indexPath.row]
-        //cell.switch.isOn = model.enable
-        //cell.backgroundColor = model.enable ? UIColor.white : UIColor.darkGray
-        //cell.timeLabel.text = String.formatTime(date: model.time!)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "alarmCell", for: indexPath) // as Custom Cell Class (guard this
         return cell
     }
 }

@@ -50,7 +50,7 @@ class AlarmBuilder {
     private var alarm: AlarmModel?
     
     func reset() {
-        alarm = AlarmModel(Date(), false, 0, "Wake Up")
+        alarm = AlarmModel(Date(), true, 0, "Wake Up")
     }
     
     func setTime(_ time: Date) {

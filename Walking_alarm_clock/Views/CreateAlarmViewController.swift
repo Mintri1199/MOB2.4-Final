@@ -44,7 +44,7 @@ class CreateAlarmViewController: UIViewController {
         timeTextField.text = String.formatTime(date: date)
     }
     
-    @IBAction func doneTapped(_ sender: Any) {
+    @IBAction private func doneTapped(_ sender: Any) {
         guard let date = timePicker?.date else {
             return
         }

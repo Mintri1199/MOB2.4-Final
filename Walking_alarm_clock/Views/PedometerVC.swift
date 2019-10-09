@@ -9,8 +9,6 @@
 import UIKit
 import UserNotifications
 
-
-
 class PedometerVC: UIViewController {
     
     private let statusLabel: UILabel = {

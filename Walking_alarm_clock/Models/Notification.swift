@@ -40,6 +40,10 @@ class AlarmNotification {
             }
         }
     }
+    
+    func removeNotification(_ id: String) {
+    
+    }
 }
 
 class NotificationBuilder {

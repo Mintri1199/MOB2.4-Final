@@ -10,12 +10,12 @@ import UIKit
 
 class CountStepsViewController: UIViewController {
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var stepsNum: UILabel!
-    @IBOutlet weak var dismissView: UIView!
-    @IBOutlet weak var dismissButton: UIButton!
-    @IBAction func dismissTapped(_ sender: Any) {
+    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var timeLabel: UILabel!
+    @IBOutlet weak private var stepsNum: UILabel!
+    @IBOutlet weak private var dismissView: UIView!
+    @IBOutlet weak private var dismissButton: UIButton!
+    @IBAction private func dismissTapped(_ sender: Any) {
         // TODO: go back to home collection view, not wake up screen
         self.dismiss(animated: true, completion: nil)
     }
@@ -43,10 +43,8 @@ class CountStepsViewController: UIViewController {
                 
         // current time label
         timeLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.tick) , userInfo: nil, repeats: true)
-        
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
     }
-    
     
     @objc func tick() {
         dateLabel.text = date.toString()
@@ -63,5 +61,4 @@ class CountStepsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

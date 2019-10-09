@@ -10,9 +10,9 @@ import UIKit
 
 class WakeUpScreenViewController: UIViewController {
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var startWalkingButton: UIButton!
+    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var timeLabel: UILabel!
+    @IBOutlet weak private var startWalkingButton: UIButton!
     
     let date = Date()
 
@@ -24,19 +24,16 @@ class WakeUpScreenViewController: UIViewController {
                 
         // current time label
         timeLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.tick) , userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
         
         // start walking button
         startWalkingButton.titleLabel?.text = "Start Walking"
-        
     }
-    
     
     @objc func tick() {
         dateLabel.text = date.toString()
         timeLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
     }
-    
 
     /*
     // MARK: - Navigation
@@ -47,5 +44,4 @@ class WakeUpScreenViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

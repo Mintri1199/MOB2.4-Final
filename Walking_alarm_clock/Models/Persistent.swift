@@ -110,4 +110,16 @@ class Persistent {
             print("There is no array to remove from")
         }
     }
+    
+    func deleteAllAlarm() {
+        guard let idArray = fetchAlarmIds() else {
+            return
+        }
+        
+        idArray.forEach { id in
+            deleteOneAlarm(id)
+        }
+        
+        UserDefaults.standard.removeObject(forKey: alarmArrayKey)
+    }
 }
