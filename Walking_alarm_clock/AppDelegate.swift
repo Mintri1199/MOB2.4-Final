@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -64,4 +65,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 
-// TODO: extension. when receive notification, present wake up screen
+extension AppDelegate: UNUserNotificationCenterDelegate {
+}

@@ -23,7 +23,7 @@ class Persistent {
         if !persmissionAsked {
                 UserDefaults.standard.set(!persmissionAsked, forKey: self.asked)
                 completion()
-        } 
+        }
     }
     
     func fetchAlarmIds() -> [String]? {
@@ -43,9 +43,13 @@ class Persistent {
     func fetchOneAlarm(_ id: String) -> AlarmModel? {
         if let data = UserDefaults.standard.object(forKey: id) as? Data {
             do {
-                let alarm = try  NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? AlarmModel
-                return alarm
+                if let alarm = try  NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? AlarmModel {
+                    return alarm
+                } else {
+                    return nil
+                }
             } catch {
+                print(error.localizedDescription)
                 return nil
             }
         } else {
@@ -58,13 +62,13 @@ class Persistent {
             let data = try NSKeyedArchiver.archivedData(withRootObject: new, requiringSecureCoding: true)
             UserDefaults.standard.set(data, forKey: id)
         } catch {
-            print("Unable to encode alarm object")
+            print(error.localizedDescription)
         }
     }
     
     func addAlarm(_ alarm: AlarmModel) {
         do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: alarm, requiringSecureCoding: true)
+            let data = try NSKeyedArchiver.archivedData(withRootObject: alarm, requiringSecureCoding: false)
             UserDefaults.standard.set(data, forKey: alarm.alarmIdentifier)
             
             if var array = self.fetchAlarmIds() {
@@ -74,7 +78,7 @@ class Persistent {
                 createAlarmArray(alarm.alarmIdentifier)
             }
         } catch {
-            print("unable to encode the alarm object")
+            print(error.localizedDescription)
         }
     }
     
@@ -84,7 +88,7 @@ class Persistent {
             let data = try NSKeyedArchiver.archivedData(withRootObject: initialArray, requiringSecureCoding: true)
             UserDefaults.standard.set(data, forKey: alarmArrayKey)
         } catch {
-            print("unable to encode an array of identifiers")
+            print(error.localizedDescription)
         }
     }
     
@@ -93,7 +97,7 @@ class Persistent {
             let data = try NSKeyedArchiver.archivedData(withRootObject: newArray, requiringSecureCoding: true)
             UserDefaults.standard.set(data, forKey: alarmArrayKey)
         } catch {
-            print("Unable to update the array of identifiers")
+            print(error.localizedDescription)
         }
     }
     
@@ -105,5 +109,17 @@ class Persistent {
         } else {
             print("There is no array to remove from")
         }
+    }
+    
+    func deleteAllAlarm() {
+        guard let idArray = fetchAlarmIds() else {
+            return
+        }
+        
+        idArray.forEach { id in
+            deleteOneAlarm(id)
+        }
+        
+        UserDefaults.standard.removeObject(forKey: alarmArrayKey)
     }
 }

@@ -71,6 +71,5 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         enableSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20).isActive = true
         enableSwitch.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 0).isActive = true
-
     }
 }

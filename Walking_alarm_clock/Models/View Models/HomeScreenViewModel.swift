@@ -22,7 +22,7 @@ class HomeScreenViewModel {
     weak var delegate: ShouldDeleteRow?
     weak var updateDelegate: ShouldUpdateRow?
     
-    func populateArray() {
+    private func populateArray() {
         if let idArray = Persistent.shared.fetchAlarmIds() {
             alarmArray = idArray.compactMap { id in Persistent.shared.fetchOneAlarm(id) }
         } else {

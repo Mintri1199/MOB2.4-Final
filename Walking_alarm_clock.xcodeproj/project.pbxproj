@@ -177,7 +177,6 @@
 				44C0B565233846B00015110B /* Controllers */,
 				44C0B566233846BB0015110B /* Views */,
 				444470392327127F0068AC42 /* AppDelegate.swift */,
-				4456CE222342AFAC00DC86AC /* StringExtension.swift */,
 				44447040232712820068AC42 /* Assets.xcassets */,
 				44447042232712820068AC42 /* LaunchScreen.storyboard */,
 				44447045232712820068AC42 /* Info.plist */,
@@ -252,6 +251,7 @@
 			children = (
 				9D3025EB234C3B33005C5547 /* Int.swift */,
 				9D3025F1234D23C3005C5547 /* Date.swift */,
+				4456CE222342AFAC00DC86AC /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -672,7 +672,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P32V53W8H7;
+				DEVELOPMENT_TEAM = XYLZ368J9Q;
 				INFOPLIST_FILE = Walking_alarm_clock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -682,7 +682,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.jacksonHo.Walking-alarm-clock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -692,7 +692,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P32V53W8H7;
+				DEVELOPMENT_TEAM = XYLZ368J9Q;
 				INFOPLIST_FILE = Walking_alarm_clock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -702,7 +702,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.jacksonHo.Walking-alarm-clock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -21,14 +21,6 @@ class CreateAlarmViewModel {
         alarm = alarmBuilder.getAlarm()
     }
     
-    func setPersistent() {
-        guard let alarm = alarm else {
-            return
-        }
-        
-        Persistent.shared.addAlarm(alarm)
-    }
-    
     func completeNotification() {
         guard let time = alarm?.time, let message = alarm?.message, let id = alarm?.alarmIdentifier else {
             return
